@@ -19,25 +19,27 @@
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">imagem</th>
-                          <th scope="col">Nome</th>
-                           <th scope="col">Src</th>
-                           
+                          <th scope="col">src</th>
+                          <th scope="col">nome</th>
                           <th scope="col " colspan="2"  class="text-center">Ações</th>
                         </tr>
                       </thead>
                       <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>[ X ]</td>
-                        <td> imgxpto.jpg</td>
-                        <td> https://seusite.com/public/imgxpto.jpg</td>
-                        <td  class="text-center" >
-                           <a href="{{route('imagem.show',3)}}" class="btn btn-primary">Visualizar</a>
-                        </td>
-                        <td  class="text-center" >
-                           <a href="{{route('imagem.destroy',3)}}" onclick="javascript:confirm('text')" class="btn btn-danger">Excluir</a>
-                        </td>
-                      </tr>
+                            @foreach ($imagens as $item)
+                                <tr>
+                                  <th scope="row">{{$item->id}}</th>
+                                  <td><img src="storage/{{$item->nome}}" alt="" width="70"></td>
+                                  <td>{{$item->src}}</td>
+                                  <td> {{$item->nome}}</td>
+                                  <td  class="text-center" >
+                                    <a href="{{route('imagem.show',3)}}" class="btn btn-primary">Visualizar</a>
+                                  </td>
+                                  <td  class="text-center" >
+                                    <a href="{{route('imagem.destroy',3)}}" onclick="javascript:confirm('text')" class="btn btn-danger">Excluir</a>
+                                  </td>
+                                </tr>
+                            @endforeach
+                      
                       </tbody>
                     </table>
                 </div>

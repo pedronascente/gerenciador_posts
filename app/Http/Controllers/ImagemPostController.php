@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Imagem;
 use Illuminate\Http\Request;
 
 class ImagemPostController extends Controller
@@ -13,7 +14,8 @@ class ImagemPostController extends Controller
      */
     public function index()
     {
-        return view('adm.imagens.list');
+        $imagens = Imagem::all();
+        return view('adm.imagens.list', ['imagens' => $imagens]);
     }
 
     /**
@@ -34,7 +36,12 @@ class ImagemPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $path = $request->file('arquivo')->store('imagens', 'public');
+        $imagem  = new Imagem();
+        $imagem->nome = $path;
+        $imagem->src = '<img src="/storage/' . $path . '" class="py-3" width="100%">';
+        $imagem->save();
+        return redirect(route('imagem.index'));
     }
 
     /**
