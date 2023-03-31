@@ -19,7 +19,6 @@
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">Titulo</th>
-                          <th scope="col">Descrição</th>
                           <th scope="col">Categoria</th>
                           <th scope="col "  colspan="2" class="text-center">Ações</th>
                         </tr>
@@ -29,7 +28,6 @@
                             <tr>
                                 <th scope="row">{{ $item->id }}</th>
                                 <td>{{$item->titulo}}</td>
-                                <td>{{$item->descricao}}</td>
                                 <td>{{$item->categoria->nome}}</td>
                                 <td class="text-center" width="20px">
                                     <table>
