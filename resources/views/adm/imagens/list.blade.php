@@ -19,8 +19,7 @@
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">imagem</th>
-                          <th scope="col">src</th>
-                          <th scope="col">nome</th>
+                          <th scope="col">copie</th>
                           <th scope="col " colspan="2"  class="text-center">Ações</th>
                         </tr>
                       </thead>
@@ -30,16 +29,24 @@
                                   <th scope="row">{{$item->id}}</th>
                                   <td><img src="storage/{{$item->nome}}" alt="" width="70"></td>
                                   <td>{{$item->src}}</td>
-                                  <td> {{$item->nome}}</td>
-                                  <td  class="text-center" >
-                                    <a href="{{route('imagem.show',3)}}" class="btn btn-primary">Visualizar</a>
-                                  </td>
-                                  <td  class="text-center" >
-                                    <a href="{{route('imagem.destroy',3)}}" onclick="javascript:confirm('text')" class="btn btn-danger">Excluir</a>
-                                  </td>
+                                  <td class="text-center" width="20px">
+                                      <table>
+                                        <tr>
+                                          <td>
+                                            <a href="{{route('imagem.show',3)}}" class="btn btn-primary">Visualizar</a>
+                                          </td>
+                                          <td>
+                                              <form action="{{route('imagem.destroy',$item->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="submit" value="Excluir" class="btn btn-danger">
+                                              </form>
+                                          </td>  
+                                        </tr>  
+                                      </table>  
+                                    </td> 
                                 </tr>
                             @endforeach
-                      
                       </tbody>
                     </table>
                 </div>

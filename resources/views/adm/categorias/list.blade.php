@@ -25,9 +25,9 @@
                       <tbody> 
                             @foreach ($categorias as $categoria)
                               <tr>
-                                  <th scope="row">{{ $categoria->id }}</th>
-                                  <th>{{$categoria->nome}}</th>
-                                  <th class="text-center" width="20px">
+                                  <td scope="row">{{ $categoria->id }}</td>
+                                  <td>{{$categoria->nome}}</td>
+                                  <td class="text-center" width="20px">
                                     <table>
                                       <tr>
                                        <td>
@@ -42,7 +42,7 @@
                                         </td>  
                                       </tr>  
                                     </table>  
-                                  </th> 
+                                  </td> 
                                 </tr>   
                             @endforeach
                       </tbody>
