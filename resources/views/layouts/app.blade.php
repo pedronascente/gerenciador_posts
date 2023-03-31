@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Blog') }}
                 </a>
@@ -37,10 +37,10 @@
                                         Configurações
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="/dashboard/categoria">Categoria</a></li>
-                                        <li><a class="dropdown-item" href="/dashboard/imagem">Imagem</a></li>
-                                        <li><a class="dropdown-item" href="/dashboard/post">Post</a></li>
-                                        <li><a class="dropdown-item" href="/dashboard/sessao">Sessão</a></li>
+                                        <li><a class="dropdown-item" href="/categoria">Categoria</a></li>
+                                        <li><a class="dropdown-item" href="/imagem">Imagem</a></li>
+                                        <li><a class="dropdown-item" href="/post">Post</a></li>
+                                        <li><a class="dropdown-item" href="/sessao">Sessão</a></li>
                                     </ul>
                                 </li>
                             </ul>
