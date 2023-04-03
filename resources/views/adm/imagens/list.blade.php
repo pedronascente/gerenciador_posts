@@ -33,13 +33,16 @@
                                       <table>
                                         <tr>
                                           <td>
-                                            <a href="{{route('imagem.show',$item->id)}}" class="btn btn-warning">Visualizar</a>
+                                              <a href="download/{{$item->id}}" class="btn btn-default">Download</a>
+                                          </td>
+                                          <td>
+                                              <a href="{{route('imagem.show',$item->id)}}" class="btn btn-warning">Visualizar</a>
                                           </td>
                                           <td>
                                               <form action="{{route('imagem.destroy',$item->id)}}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <input type="submit" value="Excluir" class="btn btn-danger">
+                                                  @csrf
+                                                  @method('DELETE')
+                                                  <input type="submit" value="Excluir" class="btn btn-danger">
                                               </form>
                                           </td>  
                                         </tr>  

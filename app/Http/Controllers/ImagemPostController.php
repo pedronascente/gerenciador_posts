@@ -60,7 +60,6 @@ class ImagemPostController extends Controller
         return view('adm.imagens.show', ['imagem' => $imagem]);
     }
 
-
     /**
      * Remove the specified resource from storage.
      *
@@ -81,6 +80,16 @@ class ImagemPostController extends Controller
             $imagem->delete();
         }
         //Redirecionar usuario.
+        return redirect(route('imagem.index'));
+    }
+
+    public function download($id)
+    {
+        $imagem = Imagem::find($id);
+        if (isset($imagem)) {
+            $path = Storage::disk('public')->getDriver()->getAdapter()->applyPathPrefix($imagem->nome);
+            return response()->download($path);
+        }
         return redirect(route('imagem.index'));
     }
 }
