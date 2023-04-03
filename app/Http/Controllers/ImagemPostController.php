@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Imagem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ImagemPostController extends Controller
 {
@@ -90,6 +91,18 @@ class ImagemPostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Recuperar a imagem do banco.
+        $imagem = Imagem::find($id);
+        // Verificar se existe arquivo.
+        if ($imagem) {
+            // Recuperar o nome do arquivo
+            $nome = $imagem->nome;
+            // Deletar arquivo
+            Storage::disk('public')->delete($nome);
+            // Deletar arquivo na base de dados
+            $imagem->delete();
+        }
+        //Redirecionar usuario.
+        return redirect(route('imagem.index'));
     }
 }
