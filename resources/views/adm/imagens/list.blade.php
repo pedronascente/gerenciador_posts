@@ -33,7 +33,7 @@
                                       <table>
                                         <tr>
                                           <td>
-                                            <a href="{{route('imagem.show',3)}}" class="btn btn-primary">Visualizar</a>
+                                            <a href="{{route('imagem.show',$item->id)}}" class="btn btn-primary">Visualizar</a>
                                           </td>
                                           <td>
                                               <form action="{{route('imagem.destroy',$item->id)}}" method="POST">

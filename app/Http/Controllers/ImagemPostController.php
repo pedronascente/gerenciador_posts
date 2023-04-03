@@ -53,35 +53,13 @@ class ImagemPostController extends Controller
      */
     public function show($id)
     {
-        $errt = '[x] - imagem <br>';
-        $errt .= 'nome: 23444545 <br>';
-        $errt .= ' scr = https://seusite/public/img/wffds.jpg <br>';
-        $errt .= 'incorporar imagem : <br> <.img scrc= "https://seusite/public/img/wffds.jpg" class="efefef" .> <br>';
-        return $errt;
+        // Recuperar dados da imagem na base de dados
+        $imagem = Imagem::find($id);
+        // Criar array_list dos dados
+        // Retornar view
+        return view('adm.imagens.show', ['imagem' => $imagem]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
