@@ -20,7 +20,7 @@
                           <th scope="col">#</th>
                           <th scope="col">Titulo</th>
                           <th scope="col">Categoria</th>
-                          <th scope="col "  colspan="2" class="text-center">Ações</th>
+                          <th scope="col "  colspan="3" class="text-center">Ações</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -32,11 +32,19 @@
                                 <td class="text-center" width="20px">
                                     <table>
                                       <tr>
+                                        <td>
+                                            <a href="{{route('post.show',$item->id)}}" class="btn btn-warning">Visualizar</a>
+                                        </td>  
                                        <td>
                                           <a href="{{route('post.edit',$item->id)}}" class="btn btn-primary">Editar</a>
                                        </td>
+                                        
                                         <td>
-                                            <a href="{{route('post.show',$item->id)}}" class="btn btn-danger">Visualizar</a>
+                                            <form action="{{route('post.destroy',$item->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="submit" value="Excluir" class="btn btn-danger">
+                                              </form>
                                         </td>  
                                       </tr>  
                                     </table>  

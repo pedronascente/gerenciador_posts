@@ -41,7 +41,7 @@
                       </div>
                       <div class="mb-3">
                           <label class="form-label">Texto: </label>
-                          <textarea class="form-control"  name="texto" rows="50">{{$artigo[0]->texto}}</textarea>
+                          <textarea class="form-control"  name="texto" rows="35">{{$artigo[0]->texto}}</textarea>
                           <!--FORM VALIDATE-->
                           @error('texto')
                             <div class="alert alert-danger mt-2 mb-1">{{ $message }}</div>

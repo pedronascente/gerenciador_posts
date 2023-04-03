@@ -162,6 +162,11 @@ class ArtigoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //Buscar artigo na base 
+        $artigo = Artigo::find($id);
+        if ($artigo) {
+            $artigo->delete();
+        }
+        return redirect(route('post.index'));
     }
 }

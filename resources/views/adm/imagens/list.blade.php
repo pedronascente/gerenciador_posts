@@ -27,13 +27,13 @@
                             @foreach ($imagens as $item)
                                 <tr>
                                   <th scope="row">{{$item->id}}</th>
-                                  <td><img src="storage/{{$item->nome}}" alt="" width="70"></td>
+                                  <td><img src="storage/{{$item->nome}}" alt="" width="100" class="img-thumbnail"></td>
                                   <td>{{$item->src}}</td>
                                   <td class="text-center" width="20px">
                                       <table>
                                         <tr>
                                           <td>
-                                            <a href="{{route('imagem.show',$item->id)}}" class="btn btn-primary">Visualizar</a>
+                                            <a href="{{route('imagem.show',$item->id)}}" class="btn btn-warning">Visualizar</a>
                                           </td>
                                           <td>
                                               <form action="{{route('imagem.destroy',$item->id)}}" method="POST">

@@ -25,9 +25,9 @@
                     @endif
                     
                 </div>
-                <div class="card-footer ">
-                    <a href="{{route('post.edit',$artigo[0]->id)}}" class="btn btn-primary">Editar</a>
-                    <a href="{{route('post.index')}}" class="btn btn-danger">Sair</a>
+                <div class="card-footer">
+                    <a href="{{route('post.index')}}" class="btn btn-warning">Voltar</a>
+                     <a href="{{route('post.edit',$artigo[0]->id)}}" class="btn btn-primary">Editar</a>
                 </div>
             </div>
         </div>

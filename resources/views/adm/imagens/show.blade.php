@@ -18,7 +18,7 @@
                   <table>
                     <tr>
                       <td>
-                        <a href="{{route('imagem.index')}}" class="btn btn-primary">Voltar</a>
+                        <a href="{{route('imagem.index')}}" class="btn btn-warning">Voltar</a>
                       </td>
                       <td> 
                         <form action="{{route('imagem.destroy',$imagem->id)}}" method="POST">
